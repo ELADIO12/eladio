@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELADIO'S PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3e119569b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/mylogo.png" class="logo">
+            <ul id="sidemenu"> 
+
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#Services">Projects</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contacts</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+             <p>Web Profile</p>
+             <h1>Hi I'm <span>Eladio</span> <br> C. Saborboro III</h1>
+        </div>
+    </div>
+</div>
+<!-----------about-------->
+
+<div class="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/my profile.jpg">
+            </div>
+            <div class="about-col-2">
+                <h3 class="sub-title">About Me</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at ligula nec metus tempor 
+                    fermentum quis tempus leo. Nullam aliquam, ipsum quis fermentum consectetur, nibh ex viverra
+                     orci, in viverra sem tortor et libero. Vivamus et pellentesque libero. In sit amet metus felis. 
+                     Proin volutpat odio non ex pharetra, id pulvinar tellus accumsan.</p>
+
+                     <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                     </div>
+                     <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Computer skills</span><br>Able to use MS Tools</li>
+                            <li><span>Communication</span><br>Social Skills</li>
+                            <li><span>Presentation</span><br>Public Speaking</li>   
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2022 - 2023</span><br>NC2 Computer Animation Trainee</li>
+                            <li><span>2021 - 2022</span><br>Team Leader at Child Alert Mindanao ORG.</li>
+                            <li><span>2022 - 2023</span><br>Press Conference CAM at SM Lanang</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023</span><br>NC2 Computer Animation Graduate</li>
+                            <li><span>2022</span><br>JHS SMAW Strand Graduate</li>
+                            <li><span>2024</span><br>Computer Programming Graduate</li>
+                        </ul>
+                    </div>
+                     </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------Services----- -->
+<div id="Services">
+    <div class="container">
+        <h3 class="sub-title">My Projects</h3>
+        <div class="Service-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at ligula nec metus tempor 
+                    fermentum quis tempus leo. Nullam aliquam, ipsum quis fermentum consectetur, nibh ex viverra
+                    orci, in viverra sem tortor et libero.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>UI/UX Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at ligula nec metus tempor 
+                    fermentum quis tempus leo. Nullam aliquam, ipsum quis fermentum consectetur, nibh ex viverra
+                    orci, in viverra sem tortor et libero.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at ligula nec metus tempor 
+                    fermentum quis tempus leo. Nullam aliquam, ipsum quis fermentum consectetur, nibh ex viverra
+                    orci, in viverra sem tortor et libero.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+       <div>
+       </div>
+</div>
+<!--------portfolio-------- -->
+<div id="portfolio">
+    <div class="container">
+        <h3 class="sub-title">My Work</h3>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/image2.webp">
+                <div class="layer">
+                    <h3>Social Media App</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at ligula nec metus tempor 
+                        fermentum quis tempus leo.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/image3.webp">
+                <div class="layer">
+                    <h3>Music App</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at ligula nec metus tempor 
+                        fermentum quis tempus leo.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/image1.jpg">
+                <div class="layer">
+                    <h3>Online Shopping App</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at ligula nec metus tempor 
+                        fermentum quis tempus leo.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+
+<!-----------contact------ -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> contact@example.com</p>
+                <p><i class="fa-solid fa-phone"></i> 09123345671</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+                <a href="images/my cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name required">
+                    <input type="email" name="Email" placeholder="your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<script>
+
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+     
+        
+   }
+</script>
+
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+
+    }
+
+
+
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz-mM7rceSIYN6fSp8EL87vQGhe6xMEKlxJHb39JtbTpH77CHEpk8VVCpfw4qwr7_2ahg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>     
+
+
