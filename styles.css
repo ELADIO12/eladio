@@ -1218,9 +1218,18 @@ a.contact-value:hover { color: var(--red-bright); }
 }
 
 /* ================= HERO: CIRCULAR ARC COLLAGE ================= */
+.graphic-nav {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+.graphic-page {
+    border: none !important;
+}
+
 .graphic-arc-hero {
     position: relative;
-    padding-top: 100px;
+    padding-top: 140px;
     padding-bottom: 4rem;
     overflow: hidden;
     display: flex;
@@ -1230,6 +1239,7 @@ a.contact-value:hover { color: var(--red-bright); }
     text-align: center;
     width: 100%;
     margin: 0 auto;
+    border: none !important;
 }
 
 .arc-ambient-glow {
@@ -1242,30 +1252,17 @@ a.contact-value:hover { color: var(--red-bright); }
         radial-gradient(circle at 20% 40%, rgba(255, 85, 0, 0.08), transparent 35%),
         radial-gradient(circle at 80% 30%, rgba(240, 32, 39, 0.09), transparent 38%),
         radial-gradient(circle at 50% 90%, rgba(18, 18, 18, 0.8), transparent 60%);
+    border: none !important;
 }
 
 .arc-radial-grid {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-    background-image: 
-        radial-gradient(circle at 50% 70%, transparent 0, transparent 180px, rgba(255, 255, 255, 0.03) 181px, transparent 182px),
-        radial-gradient(circle at 50% 70%, transparent 0, transparent 320px, rgba(255, 255, 255, 0.03) 321px, transparent 322px),
-        radial-gradient(circle at 50% 70%, transparent 0, transparent 460px, rgba(255, 255, 255, 0.03) 461px, transparent 462px),
-        radial-gradient(circle at 50% 70%, transparent 0, transparent 600px, rgba(255, 255, 0.02) 601px, transparent 602px),
-        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
-    mask-image: radial-gradient(circle at 50% 50%, #000 20%, transparent 80%);
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 20%, transparent 80%);
-    opacity: 0.6;
+    display: none !important;
 }
 
 .arc-showcase-container {
     width: 100%;
     max-width: 1400px;
-    height: 720px;
+    height: 740px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -1276,7 +1273,7 @@ a.contact-value:hover { color: var(--red-bright); }
 
 .arc-hero-header {
     position: absolute;
-    top: 250px;
+    top: 270px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 25;
