@@ -1264,12 +1264,14 @@ a.contact-value:hover { color: var(--red-bright); }
 
 .arc-showcase-container {
     width: 100%;
-    max-width: 1400px;
-    height: 480px;
+    max-width: 1300px;
+    height: 450px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .arc-hero-header {
