@@ -1264,8 +1264,8 @@ a.contact-value:hover { color: var(--red-bright); }
 
 .arc-showcase-container {
     width: 100%;
-    max-width: 1300px;
-    height: 450px;
+    max-width: 1400px;
+    height: 720px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -1275,22 +1275,23 @@ a.contact-value:hover { color: var(--red-bright); }
 }
 
 .arc-hero-header {
-    position: relative;
-    z-index: 30;
-    width: 100%;
-    max-width: 860px;
-    margin: 2rem auto 0;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 25;
+    width: min(92%, 760px);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     pointer-events: auto;
 }
 
 .arc-hero-header .graphic-kicker {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     align-self: center;
 }
 
@@ -2649,12 +2650,14 @@ a.contact-value:hover { color: var(--red-bright); }
     }
 }
 
-@media (max-width: 900px) {
-    .arc-hero-header {
-        padding: 1.5rem 1.25rem 0;
-    }
+@media (max-width: 1024px) {
     .arc-showcase-container {
-        height: 380px;
+        height: 620px;
+    }
+    .arc-hero-header {
+        top: 220px;
+        width: min(92%, 620px);
+        padding: 0 1rem;
     }
     .arc-card {
         --card-w: 115px;
@@ -2662,23 +2665,25 @@ a.contact-value:hover { color: var(--red-bright); }
         border-radius: 16px;
     }
     .arc-headline {
-        font-size: clamp(1.85rem, 5vw, 2.5rem);
+        font-size: clamp(2rem, 4vw, 2.7rem);
     }
 }
 
 @media (max-width: 768px) {
     .graphic-page {
-        padding-top: 64px;
+        padding-top: 60px;
     }
     .graphic-arc-hero {
-        padding-top: 0.5rem;
-        padding-bottom: 2rem;
-    }
-    .arc-hero-header {
-        padding: 1rem 1rem 0;
+        padding-top: 0;
+        padding-bottom: 1.5rem;
     }
     .arc-showcase-container {
-        height: 320px;
+        height: 560px;
+    }
+    .arc-hero-header {
+        top: 200px;
+        width: min(94%, 480px);
+        padding: 0 0.75rem;
     }
     .arc-stage {
         height: 100%;
@@ -2692,8 +2697,8 @@ a.contact-value:hover { color: var(--red-bright); }
         font-size: clamp(1.65rem, 5.5vw, 2.1rem);
     }
     .arc-subtext {
-        font-size: 0.85rem;
-        line-height: 1.5;
+        font-size: 0.84rem;
+        line-height: 1.45;
         margin-bottom: 1.2rem;
     }
     .graphic-gallery-grid {
@@ -2713,12 +2718,20 @@ a.contact-value:hover { color: var(--red-bright); }
 
 @media (max-width: 480px) {
     .arc-showcase-container {
-        height: 270px;
+        height: 500px;
+    }
+    .arc-hero-header {
+        top: 175px;
+        width: min(96%, 360px);
+        padding: 0 0.5rem;
     }
     .arc-card {
-        --card-w: 82px;
-        --card-h: 106px;
+        --card-w: 80px;
+        --card-h: 104px;
         border-radius: 10px;
+    }
+    .arc-headline {
+        font-size: 1.55rem;
     }
 }
 

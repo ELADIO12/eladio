@@ -291,22 +291,22 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- 2. TEXTS & BUTTONS LOWER / UNDER THE ROUNDING CIRCLE IMAGES -->
-            <div class="arc-hero-header">
-                <div class="graphic-kicker"><span class="kicker-pulse"></span> FEATURED PORTFOLIO &bull; GRAPHIC &amp; BRAND DESIGN</div>
-                <h1 class="arc-headline">Let's Create Something <span class="arc-highlight">Exceptional</span></h1>
-                <p class="arc-subtext">High-impact brand systems, converting marketing collateral, and digital visual assets crafted with precision.</p>
-                
-                <div class="arc-cta-row">
-                    <a href="../contact.html" class="arc-btn-contact">
-                        <span class="btn-text">CONTACT US</span>
-                        <span class="btn-spark" aria-hidden="true">&rarr;</span>
-                    </a>
-                    <a href="#portfolio-collages" class="arc-btn-explore">
-                        <span>EXPLORE PORTFOLIO</span>
-                    </a>
+                <!-- 2. CENTER COPY & CTA NESTLED PERFECTLY UNDER THE ARCH DOME (MATCHING USER DRAWING) -->
+                <div class="arc-hero-header">
+                    <div class="graphic-kicker"><span class="kicker-pulse"></span> FEATURED PORTFOLIO &bull; GRAPHIC &amp; BRAND DESIGN</div>
+                    <h1 class="arc-headline">Let's Create Something <span class="arc-highlight">Exceptional</span></h1>
+                    <p class="arc-subtext">High-impact brand systems, converting marketing collateral, and digital visual assets crafted with precision.</p>
+                    
+                    <div class="arc-cta-row">
+                        <a href="../contact.html" class="arc-btn-contact">
+                            <span class="btn-text">CONTACT US</span>
+                            <span class="btn-spark" aria-hidden="true">&rarr;</span>
+                        </a>
+                        <a href="#portfolio-collages" class="arc-btn-explore">
+                            <span>EXPLORE PORTFOLIO</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -777,18 +777,18 @@
 
         function getRadius() {
             var w = window.innerWidth;
-            if (w <= 480) return 170;
-            if (w <= 768) return 210;
-            if (w <= 1024) return 260;
-            return 300;
+            if (w <= 480) return 240;
+            if (w <= 768) return 300;
+            if (w <= 1024) return 380;
+            return 450;
         }
 
         function getOriginY() {
             var w = window.innerWidth;
-            if (w <= 480) return 215;
-            if (w <= 768) return 260;
-            if (w <= 1024) return 310;
-            return 350;
+            if (w <= 480) return 340;
+            if (w <= 768) return 390;
+            if (w <= 1024) return 460;
+            return 530;
         }
 
         function renderCards() {
