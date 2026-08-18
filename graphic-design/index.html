@@ -31,28 +31,12 @@
     </nav>
 
     <main class="graphic-page">
-        <!-- ================= HERO SECTION: CLEAN REVOLVING CIRCULAR ARC SHOWCASE (G1 to G17) ================= -->
+        <!-- ================= HERO SECTION: ROUNDING CIRCLE IMAGES TOP, TEXT/BUTTONS LOWER/UNDER ================= -->
         <section class="graphic-arc-hero" id="graphic-hero" aria-label="Graphic and Design Showcase">
             <div class="arc-ambient-glow" aria-hidden="true"></div>
 
-            <div class="arc-hero-header">
-                <div class="graphic-kicker"><span class="kicker-pulse"></span> FEATURED PORTFOLIO &bull; GRAPHIC &amp; BRAND DESIGN</div>
-                <h1 class="arc-headline">Let's Create Something <span class="arc-highlight">Exceptional</span></h1>
-                <p class="arc-subtext">High-impact brand systems, converting marketing collateral, and digital visual assets crafted with precision.</p>
-                
-                <div class="arc-cta-row">
-                    <a href="../contact.html" class="arc-btn-contact">
-                        <span class="btn-text">CONTACT US</span>
-                        <span class="btn-spark" aria-hidden="true">&rarr;</span>
-                    </a>
-                    <a href="#portfolio-collages" class="arc-btn-explore">
-                        <span>EXPLORE PORTFOLIO</span>
-                    </a>
-                </div>
-            </div>
-
+            <!-- 1. ROUNDING CIRCLE IMAGES STAGE (TOP) -->
             <div class="arc-showcase-container" id="arc-showcase-container">
-
                 <!-- Circular Arc Stage for 17 Rotating Cards (G1 to G17 in Exact Order) -->
                 <div class="arc-stage" id="arc-stage" aria-live="polite" title="Drag to spin the circle of graphics, hover to pause, click to view in Lightbox">
                     
@@ -303,13 +287,26 @@
                             <div class="arc-card-overlay">
                                 <span class="arc-card-tag">Workshop Flyer</span>
                                 <h4 class="arc-card-caption">Home Workshop</h4>
-                                <div class="card-preview-pill">
-                                    <span>VIEW FULL PREVIEW</span>
-                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- 2. TEXTS & BUTTONS LOWER / UNDER THE ROUNDING CIRCLE IMAGES -->
+            <div class="arc-hero-header">
+                <div class="graphic-kicker"><span class="kicker-pulse"></span> FEATURED PORTFOLIO &bull; GRAPHIC &amp; BRAND DESIGN</div>
+                <h1 class="arc-headline">Let's Create Something <span class="arc-highlight">Exceptional</span></h1>
+                <p class="arc-subtext">High-impact brand systems, converting marketing collateral, and digital visual assets crafted with precision.</p>
+                
+                <div class="arc-cta-row">
+                    <a href="../contact.html" class="arc-btn-contact">
+                        <span class="btn-text">CONTACT US</span>
+                        <span class="btn-spark" aria-hidden="true">&rarr;</span>
+                    </a>
+                    <a href="#portfolio-collages" class="arc-btn-explore">
+                        <span>EXPLORE PORTFOLIO</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -780,18 +777,18 @@
 
         function getRadius() {
             var w = window.innerWidth;
-            if (w <= 480) return 175;
-            if (w <= 768) return 230;
-            if (w <= 1024) return 270;
-            return 310;
+            if (w <= 480) return 170;
+            if (w <= 768) return 210;
+            if (w <= 1024) return 260;
+            return 300;
         }
 
         function getOriginY() {
             var w = window.innerWidth;
-            if (w <= 480) return 240;
-            if (w <= 768) return 300;
-            if (w <= 1024) return 340;
-            return 380;
+            if (w <= 480) return 215;
+            if (w <= 768) return 260;
+            if (w <= 1024) return 310;
+            return 350;
         }
 
         function renderCards() {
