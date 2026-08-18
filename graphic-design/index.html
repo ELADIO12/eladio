@@ -35,6 +35,22 @@
         <section class="graphic-arc-hero" id="graphic-hero" aria-label="Graphic and Design Showcase">
             <div class="arc-ambient-glow" aria-hidden="true"></div>
 
+            <div class="arc-hero-header">
+                <div class="graphic-kicker"><span class="kicker-pulse"></span> FEATURED PORTFOLIO &bull; GRAPHIC &amp; BRAND DESIGN</div>
+                <h1 class="arc-headline">Let's Create Something <span class="arc-highlight">Exceptional</span></h1>
+                <p class="arc-subtext">High-impact brand systems, converting marketing collateral, and digital visual assets crafted with precision.</p>
+                
+                <div class="arc-cta-row">
+                    <a href="../contact.html" class="arc-btn-contact">
+                        <span class="btn-text">CONTACT US</span>
+                        <span class="btn-spark" aria-hidden="true">&rarr;</span>
+                    </a>
+                    <a href="#portfolio-collages" class="arc-btn-explore">
+                        <span>EXPLORE PORTFOLIO</span>
+                    </a>
+                </div>
+            </div>
+
             <div class="arc-showcase-container" id="arc-showcase-container">
 
                 <!-- Circular Arc Stage for 17 Rotating Cards (G1 to G17 in Exact Order) -->
@@ -293,22 +309,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Clean Center Copy & CTA Framed Under the Arc -->
-                <div class="arc-center-content">
-                    <h1 class="arc-headline">Let's Create Something <span class="arc-highlight">Exceptional</span></h1>
-                    <p class="arc-subtext">Let's collaborate to create a bold brand, high-converting marketing visuals, or seamless digital graphics that captivate your audience.</p>
-                    
-                    <div class="arc-cta-row">
-                        <a href="../contact.html" class="arc-btn-contact">
-                            <span class="btn-text">CONTACT US</span>
-                            <span class="btn-spark" aria-hidden="true">&rarr;</span>
-                        </a>
-                        <a href="#portfolio-collages" class="arc-btn-explore">
-                            <span>EXPLORE PORTFOLIO</span>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -780,18 +780,18 @@
 
         function getRadius() {
             var w = window.innerWidth;
-            if (w <= 480) return Math.min(Math.max(w * 0.46, 175), 210);
-            if (w <= 768) return Math.min(Math.max(w * 0.36, 220), 270);
-            if (w <= 1024) return Math.min(Math.max(w * 0.32, 280), 340);
-            return Math.min(Math.max(w * 0.28, 320), 400);
+            if (w <= 480) return 175;
+            if (w <= 768) return 230;
+            if (w <= 1024) return 270;
+            return 310;
         }
 
         function getOriginY() {
             var w = window.innerWidth;
-            if (w <= 480) return 330;
-            if (w <= 768) return 390;
-            if (w <= 1024) return 460;
-            return 520;
+            if (w <= 480) return 240;
+            if (w <= 768) return 300;
+            if (w <= 1024) return 340;
+            return 380;
         }
 
         function renderCards() {
