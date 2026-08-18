@@ -719,24 +719,26 @@ a.contact-value:hover { color: var(--red-bright); }
     .work .deck-card.is-far-right { transform: translateX(104%) translateY(26px) rotate(5deg) scale(.88); }
 }
 
-@media (max-width: 768px) {
-    .nav-container { padding: 0 1.25rem; height: 60px; }
-    .nav-logo { font-size: 1.3rem; }
+@media (max-width: 900px) {
+    .nav-container { padding: 0 1.25rem; height: 64px; }
+    .nav-logo { font-size: 1.35rem; }
+    .navbar .nav-cta { display: none !important; }
+    .nav-toggle { display: flex !important; }
     
     /* Modern Glassmorphic Mobile Drawer */
     .nav-menu {
         position: fixed;
-        top: 60px;
+        top: 64px;
         left: 0;
         width: 100%;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 64px);
         background: rgba(8, 8, 12, 0.98);
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
-        padding: 2rem 1.75rem;
+        padding: 2.25rem 2rem;
         gap: 1.25rem;
         transform: translateX(-100%);
         transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -750,7 +752,7 @@ a.contact-value:hover { color: var(--red-bright); }
         font-family: var(--font-display);
         font-weight: 700;
         color: rgba(255, 255, 255, 0.85);
-        padding: 0.6rem 0;
+        padding: 0.65rem 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         display: flex;
         align-items: center;
@@ -761,21 +763,8 @@ a.contact-value:hover { color: var(--red-bright); }
         color: var(--red-bright);
         padding-left: 0.5rem;
     }
-    .nav-cta {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        padding: 0.9rem 1.5rem;
-        font-size: 0.85rem;
-        border-radius: 6px;
-        background: var(--red);
-        border-color: var(--red);
-        margin-top: 1rem;
-        box-shadow: 0 8px 25px rgba(240, 32, 39, 0.35);
-    }
+    
     .nav-toggle {
-        display: flex;
         width: 44px;
         height: 44px;
         align-items: center;
@@ -783,9 +772,12 @@ a.contact-value:hover { color: var(--red-bright); }
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
     }
-    
-    /* Hero on Phones */
+}
+
+@media (max-width: 768px) {
+    /* Hero on Phones & Tablets */
     .hero { padding: 90px 1.25rem 2rem; }
     .hero-container { padding: 1rem 0; gap: 2.2rem; }
     .hero-headline { font-size: clamp(2.1rem, 8.5vw, 3.2rem); line-height: 1.15; }
@@ -1357,30 +1349,27 @@ a.contact-value:hover { color: var(--red-bright); }
 /* Apex Highlight when card rounds to the top center (ONLY ONE CARD) */
 .arc-card.is-apex {
     box-shadow: 
-        0 28px 65px rgba(0, 0, 0, 0.95),
-        0 0 40px rgba(240, 32, 39, 0.7),
-        0 0 0 2.5px var(--red-bright),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-    filter: brightness(1.14) contrast(1.08);
+        0 24px 60px rgba(0, 0, 0, 0.95),
+        0 0 35px rgba(240, 32, 39, 0.65),
+        0 0 0 2px var(--red-bright),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    filter: brightness(1.1) contrast(1.05);
     z-index: 50 !important;
 }
 
 .arc-card.is-apex .arc-card-tag {
-    color: #fff;
-    background: rgba(240, 32, 39, 0.9);
-    padding: 0.2rem 0.55rem;
-    border-radius: 4px;
-    display: inline-block;
+    color: var(--red-bright);
+    font-weight: 800;
 }
 
 .arc-card:hover,
 .arc-card:focus-visible {
     box-shadow: 
-        0 30px 70px rgba(0, 0, 0, 0.95),
-        0 0 45px rgba(240, 32, 39, 0.75),
-        0 0 0 2.5px var(--red-bright),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-    filter: brightness(1.15) contrast(1.08);
+        0 26px 65px rgba(0, 0, 0, 0.95),
+        0 0 35px rgba(240, 32, 39, 0.7),
+        0 0 0 2px var(--red-bright),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    filter: brightness(1.12) contrast(1.05);
     z-index: 55 !important;
     outline: none;
 }
@@ -1404,20 +1393,21 @@ a.contact-value:hover { color: var(--red-bright); }
 }
 
 .arc-card:hover img {
-    transform: scale(1.06);
+    transform: scale(1.04);
     filter: saturate(1.05) contrast(1.08);
 }
 
 .arc-card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.9) 100%);
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.85) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0.85rem;
-    opacity: 0.85;
+    padding: 0.65rem 0.75rem;
+    opacity: 0.9;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .arc-card:hover .arc-card-overlay,
@@ -1432,22 +1422,28 @@ a.contact-value:hover { color: var(--red-bright); }
     color: var(--red-bright);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 0.2rem;
-    transition: all 0.3s ease;
+    margin-bottom: 0.15rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 .arc-card-caption {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
     color: #fff;
-    line-height: 1.25;
+    line-height: 1.2;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
-/* Card Preview Pill matching user expand request */
+/* In the rotating crown arch, hide the redundant large pill so graphics are totally visible */
+.arc-card .card-preview-pill {
+    display: none;
+}
+
+/* Card Preview Pill for Editorial Collages */
 .card-preview-pill {
     display: inline-flex;
     align-items: center;
@@ -1476,13 +1472,6 @@ a.contact-value:hover { color: var(--red-bright); }
     flex-shrink: 0;
 }
 
-.arc-card .card-preview-pill {
-    margin-top: 0.35rem;
-    padding: 0.22rem 0.5rem;
-    font-size: 0.52rem;
-    width: fit-content;
-}
-
 .collage-card .card-preview-pill {
     position: absolute;
     top: 0.75rem;
@@ -1491,9 +1480,7 @@ a.contact-value:hover { color: var(--red-bright); }
     transform: translateY(0);
 }
 
-.collage-card:hover .card-preview-pill,
-.arc-card:hover .card-preview-pill,
-.arc-card.is-apex .card-preview-pill {
+.collage-card:hover .card-preview-pill {
     opacity: 1;
     background: var(--red-bright, #f02027);
     border-color: var(--red-bright, #f02027);
@@ -1501,20 +1488,18 @@ a.contact-value:hover { color: var(--red-bright); }
     box-shadow: 0 6px 20px rgba(240, 32, 39, 0.6);
 }
 
-.collage-card:hover .card-preview-pill svg,
-.arc-card:hover .card-preview-pill svg {
+.collage-card:hover .card-preview-pill svg {
     color: #ffffff;
     transform: scale(1.18);
 }
 
 /* Center Content Area Framed Under the Crown Arch */
 .arc-center-content {
-    position: absolute;
-    left: 50%;
-    top: 340px;
-    transform: translateX(-50%);
-    width: min(92%, 680px);
+    position: relative;
+    margin: 3.5rem auto 0;
+    width: min(92%, 760px);
     text-align: center;
+    padding: 0 1.5rem;
     z-index: 25;
     pointer-events: auto;
 }
@@ -2633,22 +2618,19 @@ a.contact-value:hover { color: var(--red-bright); }
 
 @media (max-width: 900px) {
     .arc-showcase-container {
-        height: 700px;
+        height: 520px;
+        position: relative;
     }
     .arc-card {
-        --origin-y: 530px;
-        --radius: clamp(230px, 32vw, 340px);
-        --card-w: clamp(120px, 14vw, 150px);
-        --card-h: clamp(145px, 17vw, 185px);
+        --card-w: clamp(110px, 15vw, 140px);
+        --card-h: clamp(135px, 18vw, 170px);
+        border-radius: 18px;
     }
     .arc-center-content {
-        top: 310px;
+        margin-top: 2rem;
     }
-    .arc-batch-pill .pill-name {
-        display: none;
-    }
-    .arc-batch-pill {
-        padding: 0.35rem 0.65rem;
+    .arc-headline {
+        font-size: clamp(1.85rem, 5vw, 2.5rem);
     }
 }
 
@@ -2658,34 +2640,31 @@ a.contact-value:hover { color: var(--red-bright); }
     }
     .graphic-arc-hero {
         padding-top: 1rem;
-        padding-bottom: 3rem;
+        padding-bottom: 2.5rem;
+    }
+    .arc-showcase-container {
+        height: 440px;
     }
     .arc-stage {
-        height: clamp(480px, 62vh, 580px);
+        height: 100%;
     }
     .arc-card {
-        --radius: clamp(170px, 40vw, 240px);
-        --card-w: clamp(95px, 22vw, 130px);
-        --card-h: clamp(115px, 26vw, 155px);
+        --card-w: clamp(95px, 24vw, 120px);
+        --card-h: clamp(115px, 29vw, 148px);
         border-radius: 14px;
     }
     .arc-center-content {
-        top: 68%;
-        width: 95%;
+        margin-top: 1.25rem;
+        width: 100%;
+        padding: 0 1rem;
     }
     .arc-headline {
-        font-size: clamp(1.6rem, 5.2vw, 2.2rem);
+        font-size: clamp(1.65rem, 5.5vw, 2.1rem);
     }
     .arc-subtext {
         font-size: 0.85rem;
         line-height: 1.5;
-        margin-bottom: 1rem;
-    }
-    .arc-batch-pill .pill-name {
-        display: none;
-    }
-    .arc-batch-pill {
-        padding: 0.35rem 0.55rem;
+        margin-bottom: 1.2rem;
     }
     .graphic-gallery-grid {
         grid-template-columns: 1fr;

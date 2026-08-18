@@ -780,16 +780,18 @@
 
         function getRadius() {
             var w = window.innerWidth;
-            if (w <= 640) return Math.min(Math.max(w * 0.45, 200), 260);
-            if (w <= 900) return Math.min(Math.max(w * 0.38, 270), 360);
-            return Math.min(Math.max(w * 0.33, 310), 430);
+            if (w <= 480) return Math.min(Math.max(w * 0.46, 175), 210);
+            if (w <= 768) return Math.min(Math.max(w * 0.36, 220), 270);
+            if (w <= 1024) return Math.min(Math.max(w * 0.32, 280), 340);
+            return Math.min(Math.max(w * 0.28, 320), 400);
         }
 
         function getOriginY() {
             var w = window.innerWidth;
-            if (w <= 640) return 480;
-            if (w <= 900) return 530;
-            return 580;
+            if (w <= 480) return 330;
+            if (w <= 768) return 390;
+            if (w <= 1024) return 460;
+            return 520;
         }
 
         function renderCards() {
