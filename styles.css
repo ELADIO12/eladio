@@ -1220,12 +1220,16 @@ a.contact-value:hover { color: var(--red-bright); }
 /* ================= HERO: CIRCULAR ARC COLLAGE ================= */
 .graphic-arc-hero {
     position: relative;
-    min-height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1.25rem 3.5rem;
+    padding-top: 100px;
+    padding-bottom: 4rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .arc-ambient-glow {
@@ -1258,16 +1262,6 @@ a.contact-value:hover { color: var(--red-bright); }
     opacity: 0.6;
 }
 
-.graphic-arc-hero {
-    position: relative;
-    padding-top: 85px;
-    padding-bottom: 3.5rem;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .arc-showcase-container {
     width: 100%;
     max-width: 1400px;
@@ -1275,20 +1269,27 @@ a.contact-value:hover { color: var(--red-bright); }
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    display: block;
 }
 
 .arc-hero-header {
     position: relative;
     z-index: 30;
+    width: 100%;
     max-width: 860px;
     margin: 2rem auto 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 0 1.5rem;
     pointer-events: auto;
 }
 
 .arc-hero-header .graphic-kicker {
     margin-bottom: 1.25rem;
+    align-self: center;
 }
 
 .arc-stage.is-dragging {
@@ -2644,26 +2645,6 @@ a.contact-value:hover { color: var(--red-bright); }
     .graphic-stat-item:nth-child(4) {
         border-bottom: none;
     }
-}
-
-.arc-hero-header {
-    position: relative;
-    z-index: 20;
-    max-width: 880px;
-    margin: 0 auto 0.5rem;
-    text-align: center;
-    padding: 2.5rem 1.5rem 0;
-}
-
-.arc-hero-header .graphic-kicker {
-    margin-bottom: 1.25rem;
-}
-
-.arc-showcase-container {
-    position: relative;
-    width: 100%;
-    height: 460px;
-    overflow: hidden;
 }
 
 @media (max-width: 900px) {
