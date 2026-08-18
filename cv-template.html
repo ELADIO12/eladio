@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eladio C. Saborboro III - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #e2e4e8;
+            color: #222;
+            font-size: 8.5pt;
+            line-height: 1.35;
+        }
+
+        .cv-page {
+            width: 210mm;
+            height: 297mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            margin: 0 auto 10mm;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 68mm 142mm;
+            overflow: hidden;
+            page-break-after: always;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+            .cv-page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+
+        /* SIDEBAR (Dark Charcoal / Black) */
+        .cv-sidebar {
+            background: #0d0d0f;
+            color: #e0e0e0;
+            padding: 7mm 5mm 6mm 6mm;
+            display: flex;
+            flex-direction: column;
+            gap: 4.5mm;
+            border-right: 1.5px solid #d71920;
+        }
+
+        .profile-photo-wrap {
+            text-align: center;
+            margin-bottom: 1mm;
+        }
+
+        .profile-photo {
+            width: 28mm;
+            height: 28mm;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 2px solid #d71920;
+            box-shadow: 0 0 12px rgba(215, 25, 32, 0.4);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2mm;
+        }
+
+        .sidebar-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding-bottom: 1mm;
+            border-bottom: 1px solid rgba(215, 25, 32, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .sidebar-title::before {
+            content: '';
+            display: inline-block;
+            width: 2.5mm;
+            height: 2.5mm;
+            background: #d71920;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8mm;
+        }
+
+        .contact-item-label {
+            font-size: 6.8pt;
+            color: #d71920;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .contact-item-val {
+            font-size: 7.6pt;
+            color: #f0f0f0;
+            word-break: break-word;
+            font-weight: 500;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2mm;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6mm;
+        }
+
+        .skill-name {
+            font-size: 7.8pt;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2mm;
+            line-height: 1.2;
+        }
+
+        .skill-bullet {
+            color: #d71920;
+            font-weight: bold;
+            font-size: 8pt;
+            line-height: 1;
+        }
+
+        .skill-desc {
+            font-size: 7pt;
+            color: #a8a8aa;
+            line-height: 1.25;
+            padding-left: 2.5mm;
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2mm;
+            font-size: 6.8pt;
+        }
+
+        .software-pill {
+            background: #17171a;
+            border: 1px solid #28282c;
+            padding: 1.2mm 1.5mm;
+            border-radius: 2px;
+            color: #e5e5e5;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .software-pill.full-width {
+            grid-column: span 2;
+        }
+
+        .highlight-box {
+            background: #17171a;
+            border: 1px solid #d71920;
+            padding: 2.5mm;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .highlight-box .hl-tag {
+            color: #d71920;
+            font-size: 7pt;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.8mm;
+        }
+
+        .highlight-box .hl-text {
+            color: #fff;
+            font-size: 7.5pt;
+            font-weight: 600;
+        }
+
+        /* MAIN CONTENT AREA */
+        .cv-main {
+            background: #ffffff;
+            padding: 7mm 7mm 6mm 7mm;
+            display: flex;
+            flex-direction: column;
+            gap: 3.8mm;
+        }
+
+        .cv-header {
+            border-bottom: 2px solid #0d0d0f;
+            padding-bottom: 3mm;
+            margin-bottom: 0.5mm;
+        }
+
+        .cv-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 19pt;
+            font-weight: 800;
+            color: #0d0d0f;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            margin-bottom: 1mm;
+            text-transform: uppercase;
+        }
+
+        .cv-name span {
+            color: #d71920;
+        }
+
+        .cv-role {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 8.8pt;
+            font-weight: 700;
+            color: #d71920;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 2.2mm;
+            line-height: 1.2;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5mm;
+        }
+
+        .header-badge {
+            background: #f1f2f4;
+            border: 1px solid #d5d7dc;
+            color: #222;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 6.6pt;
+            font-weight: 700;
+            padding: 0.8mm 2.2mm;
+            border-radius: 2px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .header-badge.red {
+            background: #d71920;
+            color: #fff;
+            border-color: #d71920;
+        }
+
+        .main-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2mm;
+        }
+
+        .section-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 9.5pt;
+            font-weight: 800;
+            color: #0d0d0f;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 1mm;
+            border-bottom: 1.5px solid #d71920;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .job-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1mm;
+            margin-bottom: 1.5mm;
+        }
+
+        .job-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .job-title {
+            font-size: 8.8pt;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .job-meta {
+            font-size: 7.2pt;
+            font-weight: 600;
+            color: #d71920;
+            margin-bottom: 0.5mm;
+        }
+
+        .job-points {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1mm;
+        }
+
+        .job-point {
+            font-size: 7.4pt;
+            color: #333;
+            line-height: 1.3;
+            position: relative;
+            padding-left: 3.5mm;
+        }
+
+        .job-point::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            top: -0.5px;
+            color: #d71920;
+            font-weight: 900;
+            font-size: 9pt;
+            line-height: 1;
+        }
+
+        .job-point strong {
+            color: #0d0d0f;
+            font-weight: 700;
+        }
+
+        .edu-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4mm;
+            margin-bottom: 1.2mm;
+        }
+
+        .edu-school {
+            font-size: 8.2pt;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .edu-degree {
+            font-size: 7.2pt;
+            color: #444;
+            font-weight: 600;
+        }
+
+        .edu-years {
+            font-size: 6.8pt;
+            color: #d71920;
+            font-weight: 700;
+        }
+
+        /* PAGE 2 PROJECTS */
+        .project-card {
+            border: 1px solid #e1e3e7;
+            border-left: 2.5px solid #d71920;
+            padding: 2mm 2.5mm;
+            border-radius: 2px;
+            background: #fafbfc;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8mm;
+            margin-bottom: 1.5mm;
+        }
+
+        .proj-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .proj-name {
+            font-size: 8.2pt;
+            font-weight: 800;
+            color: #0d0d0f;
+        }
+
+        .proj-url {
+            font-size: 7.2pt;
+            font-weight: 700;
+            color: #d71920;
+            text-decoration: none;
+        }
+
+        .proj-tags {
+            font-size: 6.5pt;
+            font-weight: 700;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .proj-stack {
+            font-size: 6.4pt;
+            color: #777;
+            font-weight: 600;
+        }
+
+        .proj-points {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8mm;
+            margin-top: 0.5mm;
+        }
+
+        .proj-point {
+            font-size: 7.1pt;
+            color: #333;
+            line-height: 1.25;
+            position: relative;
+            padding-left: 3.2mm;
+        }
+
+        .proj-point::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            top: -0.5px;
+            color: #d71920;
+            font-weight: 900;
+            font-size: 8.5pt;
+            line-height: 1;
+        }
+
+        .proj-point strong {
+            color: #0d0d0f;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= PAGE 1 ================= -->
+    <div class="cv-page">
+        <!-- SIDEBAR -->
+        <aside class="cv-sidebar">
+            <div class="profile-photo-wrap">
+                <img src="images/Expert.png" alt="Eladio C. Saborboro" class="profile-photo">
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">CONTACT INFO</div>
+                <div class="contact-list">
+                    <div>
+                        <div class="contact-item-label">PHONE</div>
+                        <div class="contact-item-val">+63 930 524 9874</div>
+                    </div>
+                    <div>
+                        <div class="contact-item-label">EMAIL</div>
+                        <div class="contact-item-val">eladiosaborboro1234@gmail.com</div>
+                    </div>
+                    <div>
+                        <div class="contact-item-label">ADDRESS</div>
+                        <div class="contact-item-val">Toril, Davao City, Philippines 8000</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">PROFESSIONAL SKILLS</div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> GoHighLevel CRM & Automation</div>
+                        <div class="skill-desc">Pipelines, custom workflows, multi-step triggers, calendar booking & snapshots.</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> Funnels & Landing Pages</div>
+                        <div class="skill-desc">High-converting sales funnels, 2-step order forms, surveys & mobile layouts.</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> AI Chat & Voice Systems</div>
+                        <div class="skill-desc">Conversational chatbots, knowledge base training & interactive voice response.</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> APIs & Integrations</div>
+                        <div class="skill-desc">Zapier, Make, custom webhooks & payment gateways (Stripe).</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> Email & SMS Campaigns</div>
+                        <div class="skill-desc">Drip sequences, 2-way SMS conversations & email deliverability (DKIM/SPF).</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> Local SEO & Optimization</div>
+                        <div class="skill-desc">RankMath SEO, GHL metadata, review automation & Google Business Profile.</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> E-Commerce & Advertising</div>
+                        <div class="skill-desc">Shopify/Amazon store support, pixel tracking setup & Meta/Google ad integrations.</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> Digital Design & UI/UX</div>
+                        <div class="skill-desc">Creative branding, ad creatives & funnel mockups using Figma & Canva.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">SOFTWARE STACK</div>
+                <div class="software-grid">
+                    <div class="software-pill">GoHighLevel (GHL)</div>
+                    <div class="software-pill">Zapier / Make</div>
+                    <div class="software-pill">WordPress / Elementor</div>
+                    <div class="software-pill">Wix / Shopify</div>
+                    <div class="software-pill">Amazon / Etsy</div>
+                    <div class="software-pill">Meta Ads / Google Ads</div>
+                    <div class="software-pill full-width">Figma / Canva</div>
+                    <div class="software-pill full-width">Google Workspace / MS Office</div>
+                    <div class="software-pill full-width">Linux OS / Networking</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="cv-main">
+            <header class="cv-header">
+                <h1 class="cv-name">ELADIO C. <span>SABORBORO III</span></h1>
+                <div class="cv-role">GOHIGHLEVEL SPECIALIST & CRM AUTOMATION VIRTUAL ASSISTANT</div>
+                <div class="badge-row">
+                    <span class="header-badge red">GOHIGHLEVEL</span>
+                    <span class="header-badge">CRM AUTOMATION</span>
+                    <span class="header-badge">SALES FUNNELS</span>
+                    <span class="header-badge">AI SYSTEMS</span>
+                </div>
+            </header>
+
+            <section class="main-section">
+                <h2 class="section-heading">WORK EXPERIENCE</h2>
+
+                <div class="job-card">
+                    <div class="job-title-row">
+                        <div class="job-title">GoHighLevel CRM & Automation Specialist</div>
+                    </div>
+                    <div class="job-meta">Freelance / Client Projects | 2024 – Present</div>
+                    <ul class="job-points">
+                        <li class="job-point"><strong>CRM & Sub-Account Architecture:</strong> Built and customized GHL sub-accounts, pipelines, custom fields, and booking calendars tailored for agency and service-based businesses.</li>
+                        <li class="job-point"><strong>Workflow & Trigger Automation:</strong> Created complex, multi-branch automation workflows for lead capture, automated appointment reminders, missed-call text backs, and long-term nurture sequences.</li>
+                        <li class="job-point"><strong>Funnel & Landing Page Design:</strong> Designed and deployed responsive, high-converting landing pages and sales funnels integrated with Stripe payment gateways, forms, and custom popups.</li>
+                        <li class="job-point"><strong>AI & Chatbot Deployment:</strong> Configured GHL AI conversational bots and structured custom knowledge bases to automate customer inquiry handling and lead pre-qualification.</li>
+                        <li class="job-point"><strong>API & Webhook Integrations:</strong> Connected external platforms, lead sources, and forms into GoHighLevel using Zapier, Make, and webhook endpoints.</li>
+                        <li class="job-point"><strong>Campaign & Ad Tracking:</strong> Integrated Meta Pixel and Google tracking scripts into GHL funnels to track conversion metrics and lead attribution.</li>
+                    </ul>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-title-row">
+                        <div class="job-title">Technical & Web Virtual Assistant</div>
+                    </div>
+                    <div class="job-meta">Remote Client Services | 2023 – 2024</div>
+                    <ul class="job-points">
+                        <li class="job-point"><strong>CMS & E-Commerce Management:</strong> Built and maintained pages on WordPress (Elementor), Wix, and Shopify, ensuring speed optimization and mobile responsiveness.</li>
+                        <li class="job-point"><strong>Local SEO Management:</strong> Executed on-page SEO strategies using RankMath and optimized local search visibility through reputation and review automation.</li>
+                        <li class="job-point"><strong>Creative Asset Production:</strong> Designed high-quality graphics, social media creatives, and marketing collateral using Figma and Canva.</li>
+                    </ul>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-title-row">
+                        <div class="job-title">IT Support & Systems Trainee</div>
+                    </div>
+                    <div class="job-meta">Philippine Fisheries Development Authority (PFDA) | Feb. 2024 – Mar. 2024</div>
+                    <ul class="job-points">
+                        <li class="job-point">Performed computer system troubleshooting, hardware maintenance, power supply replacements, and network cable crimping/testing.</li>
+                        <li class="job-point">Installed, configured, and managed Linux OS environments for workstation deployment.</li>
+                        <li class="job-point">Created digital presentation assets, video slideshow tributes, and event graphic designs for official corporate functions.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="main-section">
+                <h2 class="section-heading">EDUCATION</h2>
+                <div class="edu-item">
+                    <div class="edu-school">Doña Carmen Denia National High School</div>
+                    <div class="edu-degree">Senior High School – Technical-Vocational-Livelihood (TVL / ICT)</div>
+                    <div class="edu-years">2022 – 2024</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-school">Doña Carmen Denia National High School</div>
+                    <div class="edu-degree">Junior High School</div>
+                    <div class="edu-years">2018 – 2022</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-school">Don Juan Dela Cruz Central Elementary School</div>
+                    <div class="edu-degree">Elementary School Graduate</div>
+                    <div class="edu-years">Graduated 2018</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
+    <div class="cv-page">
+        <!-- SIDEBAR -->
+        <aside class="cv-sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">PORTFOLIO OVERVIEW</div>
+                <div style="font-size: 7.2pt; color: #a8a8aa; line-height: 1.4;">
+                    Featured live case studies demonstrating expertise in GHL architecture, custom WordPress UI/UX, AI integrations, and full-funnel lead generation.
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">TECHNICAL HIGHLIGHTS</div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> GoHighLevel (GHL) Systems</div>
+                        <div class="skill-desc">Sub-accounts, automated booking pipelines, AI conversational agents & 2-way SMS.</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> WordPress & Custom UI</div>
+                        <div class="skill-desc">Elementor Pro, custom CSS styling, dynamic post types & conversion-focused UI.</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> Lead Nurture Architecture</div>
+                        <div class="skill-desc">Automated lead routing from ad clicks through CRM stages to instant alerts.</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span class="skill-bullet">▪</span> Search & Speed Tuning</div>
+                        <div class="skill-desc">Technical on-page SEO schemas, meta tags, script minification & fast mobile load speeds.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">DIRECT CONTACT</div>
+                <div class="contact-list">
+                    <div>
+                        <div class="contact-item-label">EMAIL</div>
+                        <div class="contact-item-val">eladiosaborboro1234@gmail.com</div>
+                    </div>
+                    <div>
+                        <div class="contact-item-label">PHONE / WHATSAPP</div>
+                        <div class="contact-item-val">+63 930 524 9874</div>
+                    </div>
+                    <div>
+                        <div class="contact-item-label">LOCATION</div>
+                        <div class="contact-item-val">Toril, Davao City, Philippines</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section" style="margin-top: auto;">
+                <div class="highlight-box">
+                    <div class="hl-tag">AVAILABILITY</div>
+                    <div class="hl-text">Open for Remote & Freelance Roles</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="cv-main">
+            <header class="cv-header">
+                <h1 class="cv-name">FEATURED <span>BUILDS.</span></h1>
+                <div class="cv-role">LIVE CLIENT WEBSITES & AUTOMATION SYSTEMS</div>
+                <div class="badge-row">
+                    <span class="header-badge red">6 LIVE CASE STUDIES</span>
+                    <span class="header-badge">AI / SAAS / REAL ESTATE / WELLNESS</span>
+                </div>
+            </header>
+
+            <section class="main-section">
+                <h2 class="section-heading">CLIENT SYSTEMS & LIVE WEB DEPLOYMENTS</h2>
+
+                <!-- 1. Aura Assistant -->
+                <div class="project-card">
+                    <div class="proj-header">
+                        <span class="proj-name">1. Aura Assistant</span>
+                        <span class="proj-url">auraassistant.com</span>
+                    </div>
+                    <div class="proj-tags">AI & SAAS • FRONT-DESK AI PRODUCT</div>
+                    <div class="proj-stack">WordPress • Elementor • Custom HTML/CSS/JS • International SEO</div>
+                    <ul class="proj-points">
+                        <li class="proj-point"><strong>Front-End Architecture & SaaS UI/UX:</strong> Built a modern, tech-forward B2B landing page featuring dynamic showcase modules and contrast hierarchy.</li>
+                        <li class="proj-point"><strong>Lead Routing & CRM Integration:</strong> Configured custom form handlers and webhook integrations to instantly route qualified demo requests into backend CRM pipelines.</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Serena Homes Global -->
+                <div class="project-card">
+                    <div class="proj-header">
+                        <span class="proj-name">2. Serena Homes Global</span>
+                        <span class="proj-url">serenahomesglobal.com</span>
+                    </div>
+                    <div class="proj-tags">GLOBAL REAL ESTATE • LUXURY INTERNATIONAL PROPERTIES</div>
+                    <div class="proj-stack">WordPress • Elementor • Custom CSS/JS • Real Estate Schema SEO</div>
+                    <ul class="proj-points">
+                        <li class="proj-point"><strong>Luxury Visual Design & Showcases:</strong> Coded an upscale real estate web experience with responsive high-resolution property showcase grids and video tour embeds.</li>
+                        <li class="proj-point"><strong>CMS & Inquiry Funnels:</strong> Structured WordPress Custom Post Types and filtering systems connected to instant agent email alerts and lead tracking.</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Homecoming Pilates -->
+                <div class="project-card">
+                    <div class="proj-header">
+                        <span class="proj-name">3. Homecoming Pilates</span>
+                        <span class="proj-url">homecomingpilates.com</span>
+                    </div>
+                    <div class="proj-tags">HEALTH & WELLNESS • BOUTIQUE PILATES STUDIO</div>
+                    <div class="proj-stack">GoHighLevel (GHL) • Custom CSS/JS • GHL Calendars & Workflows</div>
+                    <ul class="proj-points">
+                        <li class="proj-point"><strong>Brand-Centric Responsive UI:</strong> Designed a calming, organic wellness aesthetic inside GoHighLevel with custom CSS styling and fluid mobile viewports.</li>
+                        <li class="proj-point"><strong>Booking & Nurture Workflows:</strong> Embedded GHL class booking calendars connected to automated SMS/email confirmation workflows and intro-offer follow-ups.</li>
+                    </ul>
+                </div>
+
+                <!-- 4. Laverne Moore -->
+                <div class="project-card">
+                    <div class="proj-header">
+                        <span class="proj-name">4. Laverne Moore</span>
+                        <span class="proj-url">lavernemoore.com</span>
+                    </div>
+                    <div class="proj-tags">REAL ESTATE • PERSONAL BRAND & AGENT LEAD GEN</div>
+                    <div class="proj-stack">GoHighLevel (GHL) • Custom Styling & Scripts • On-Page SEO • CRM Automation</div>
+                    <ul class="proj-points">
+                        <li class="proj-point"><strong>Personal Brand UI/UX:</strong> Developed a high-authority personal brand site with localized neighborhood guides and strategic CTA triggers.</li>
+                        <li class="proj-point"><strong>Dual-Intent Buyer/Seller Funnels:</strong> Automated lead stage assignments in GoHighLevel CRM with instant SMS alerts to the agent and lead autoresponders.</li>
+                    </ul>
+                </div>
+
+                <!-- 5. Empire of Ease -->
+                <div class="project-card">
+                    <div class="proj-header">
+                        <span class="proj-name">5. Empire of Ease</span>
+                        <span class="proj-url">empireofease.ai</span>
+                    </div>
+                    <div class="proj-tags">AI & SAAS • AI VOICE & CHAT SOLUTIONS</div>
+                    <div class="proj-stack">GoHighLevel (GHL) • Custom CSS/JS • On-Page SEO • Automated Funnels</div>
+                    <ul class="proj-points">
+                        <li class="proj-point"><strong>High-Conversion SaaS Architecture:</strong> Engineered a futuristic dark-mode UI with live interactive AI voice/chat widget demonstrations.</li>
+                        <li class="proj-point"><strong>Multi-Step Qualification & Pipelines:</strong> Built dynamic screening forms directly connected to GoHighLevel calendar booking and automated demo follow-ups.</li>
+                    </ul>
+                </div>
+
+                <!-- 6. Mayabundance & Co. -->
+                <div class="project-card">
+                    <div class="proj-header">
+                        <span class="proj-name">6. Mayabundance & Co.</span>
+                        <span class="proj-url">mayabundance.com</span>
+                    </div>
+                    <div class="proj-tags">BRAND CONSULTING & AI AUTOMATION • HIGH-GROWTH BRANDS</div>
+                    <div class="proj-stack">GoHighLevel (GHL) • Custom CSS/JS • High-Ticket Funnels • On-Page SEO</div>
+                    <ul class="proj-points">
+                        <li class="proj-point"><strong>Editorial Luxury UI/UX:</strong> Crafted an editorial layout inside GoHighLevel with custom typography, balanced whitespace, and screening application funnels.</li>
+                        <li class="proj-point"><strong>Back-End Automation:</strong> Integrated automated email onboarding sequences, payment checkouts, and VIP consultation scheduling inside GHL.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
