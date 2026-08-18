@@ -41,19 +41,41 @@
     });
 
     // ===== MOBILE MENU TOGGLE =====
-    if (navToggle) {
-        navToggle.addEventListener('click', function () {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isActive = navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        });
+
+        // Close on nav link click
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close on click outside
+        document.addEventListener('click', function (e) {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && e.target !== navToggle && !navToggle.contains(e.target)) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close on ESC
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
-
-    navLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
 
     // ===== SMOOTH SCROLL =====
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -1053,6 +1075,40 @@
                 updateLightboxImage();
             }
         });
+
+        // Mobile Touch Swipe Navigation
+        var touchStartX = 0;
+        var touchStartY = 0;
+        elements.lightbox.addEventListener('touchstart', function (e) {
+            if (!e.touches || !e.touches.length) return;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        elements.lightbox.addEventListener('touchend', function (e) {
+            if (!e.changedTouches || !e.changedTouches.length) return;
+            var touchEndX = e.changedTouches[0].clientX;
+            var touchEndY = e.changedTouches[0].clientY;
+            var diffX = touchEndX - touchStartX;
+            var diffY = touchEndY - touchStartY;
+
+            // Only trigger if horizontal swipe is dominant and > 45px
+            if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+                if (diffX < 0) {
+                    // Swiped left -> next image
+                    if (currentDeckImages.length) {
+                        currentIndex = (currentIndex + 1) % currentDeckImages.length;
+                        updateLightboxImage();
+                    }
+                } else {
+                    // Swiped right -> prev image
+                    if (currentDeckImages.length) {
+                        currentIndex = (currentIndex - 1 + currentDeckImages.length) % currentDeckImages.length;
+                        updateLightboxImage();
+                    }
+                }
+            }
+        }, { passive: true });
     }
 
     // Initialize when DOM is ready
