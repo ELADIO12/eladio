@@ -1225,7 +1225,7 @@
             function startAutoSlide() {
                 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
                 stopAutoSlide();
-                autoSlideTimer = window.setInterval(slideForward, 4200);
+                autoSlideTimer = window.setInterval(slideForward, 2000);
             }
 
             function stopAutoSlide() {
@@ -1239,6 +1239,10 @@
             shell.addEventListener('mouseleave', function () { isPaused = false; });
             shell.addEventListener('focusin', function () { isPaused = true; });
             shell.addEventListener('focusout', function () { isPaused = false; });
+            shell.addEventListener('touchstart', function () { isPaused = true; }, { passive: true });
+            shell.addEventListener('touchend', function () {
+                window.setTimeout(function () { isPaused = false; }, 2000);
+            }, { passive: true });
             document.addEventListener('visibilitychange', function () {
                 if (document.hidden) {
                     stopAutoSlide();
