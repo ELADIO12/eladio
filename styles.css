@@ -1523,10 +1523,9 @@ a.contact-value:hover { color: var(--red-bright); }
     cursor: pointer;
     transform-origin: center center;
     transition: box-shadow 0.35s ease, filter 0.35s ease, border-color 0.35s ease;
-    box-shadow: 
-        0 20px 45px rgba(0, 0, 0, 0.8),
-        0 0 0 1.5px rgba(255, 255, 255, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85);
+    border: none;
+    outline: none;
     overflow: hidden;
     background: #14151a;
     user-select: none;
@@ -1534,14 +1533,12 @@ a.contact-value:hover { color: var(--red-bright); }
     z-index: 12;
 }
 
-/* Apex Highlight when card rounds to the top center (ONLY ONE CARD) */
+/* Apex Highlight when card rounds to the top center */
 .arc-card.is-apex {
-    box-shadow: 
-        0 24px 60px rgba(0, 0, 0, 0.95),
-        0 0 35px rgba(240, 32, 39, 0.65),
-        0 0 0 2px var(--red-bright),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    filter: brightness(1.1) contrast(1.05);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95);
+    border: none;
+    outline: none;
+    filter: brightness(1.08) contrast(1.04);
     z-index: 50 !important;
 }
 
@@ -1552,14 +1549,11 @@ a.contact-value:hover { color: var(--red-bright); }
 
 .arc-card:hover,
 .arc-card:focus-visible {
-    box-shadow: 
-        0 26px 65px rgba(0, 0, 0, 0.95),
-        0 0 35px rgba(240, 32, 39, 0.7),
-        0 0 0 2px var(--red-bright),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    filter: brightness(1.12) contrast(1.05);
-    z-index: 55 !important;
+    box-shadow: 0 26px 65px rgba(0, 0, 0, 0.95);
+    border: none;
     outline: none;
+    filter: brightness(1.1) contrast(1.05);
+    z-index: 55 !important;
 }
 
 .arc-card-inner {
